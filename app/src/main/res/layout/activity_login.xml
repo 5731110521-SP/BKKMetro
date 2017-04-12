@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:alpha="0.5"
-                android:background="@android:color/black"
+                android:background="@drawable/rounded_corner_background"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="เข้าสู่ระบบ"
