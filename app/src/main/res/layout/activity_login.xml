@@ -26,16 +26,15 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="330dp"
-                android:alpha="0.4"
-                android:background="@android:color/black"
+                android:background="@android:color/white"
                 android:ems="10"
                 android:hint="อีเมล"
                 android:inputType="textEmailAddress"
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray" />
 
             <EditText
                 android:id="@+id/plog"
@@ -44,17 +43,16 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
-                android:alpha="0.4"
-                android:background="@android:color/black"
                 android:ems="10"
                 android:hint="รหัสผ่าน"
+                android:background="@android:color/white"
                 android:inputType="textPassword"
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray" />
 
             <Button
                 android:id="@+id/logbtn"
@@ -62,12 +60,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:background="@android:color/white"
                 android:alpha="0.5"
-                android:background="@android:color/black"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="เข้าสู่ระบบ"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
         </LinearLayout>
