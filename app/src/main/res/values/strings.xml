@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BKK Metro</string>
+    <string name="name_hint">ชื่อ</string>
+    <string name="id">เลขประจำตัวประชาชน</string>
+    <string name="emailHint">อีเมล</string>
+    <string name="comfirmPassHint">ยืนยันรหัสผ่าน</string>
+    <string name="passHint">รหัสผ่าน</string>
+    <string name="phoneHint">เบอร์โทรศัพท์</string>
+</resources>
