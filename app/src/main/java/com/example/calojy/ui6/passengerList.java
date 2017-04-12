@@ -7,12 +7,12 @@ class passengerList {
 
     public static void initList() {
         if(passengerlist.isEmpty()){
-            addInList("test@test.com","555","0123456789");
+            addInList("test@test.com","555","0123456789",0);
         }
     }
 
-    public static void addInList(String email,String pass,String phone){
-        passengerlist.add(new passenger(email,pass,phone));
+    public static void addInList(String email,String pass,String phone,int balance){
+        passengerlist.add(new passenger(email,pass,phone,balance));
     }
 
     public static boolean checkInList(String email,String phone){

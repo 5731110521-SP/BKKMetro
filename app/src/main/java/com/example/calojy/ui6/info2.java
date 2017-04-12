@@ -90,7 +90,7 @@ public class info2 extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Intent dashIntent = new Intent(info2.this, dash.class);
                 startActivity(dashIntent);
-                passengerList.addInList(info0.mail,info0.p1,info0.phone);
+                passengerList.addInList(info0.mail,info0.p1,info0.phone,0);
             }
         });
         alertDialog.show();
