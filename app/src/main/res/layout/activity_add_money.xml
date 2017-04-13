@@ -8,16 +8,6 @@
     android:padding="10dp">
 
     <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="เติมเงิน"
-        android:layout_alignBaseline="@+id/cancleG"
-        android:layout_alignBottom="@+id/cancleG"
-        android:layout_alignRight="@+id/spinner1"
-        android:layout_alignEnd="@+id/spinner1" />
-
-    <Button
         android:id="@+id/cancleG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,5 +87,22 @@
             android:layout_height="wrap_content"
             android:text="+" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/menAdd"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_toStartOf="@+id/cancleG" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cancleG"
+        android:layout_alignBottom="@+id/cancleG"
+        android:layout_alignEnd="@+id/spinner1"
+        android:layout_alignRight="@+id/spinner1"
+        android:text="เติมเงิน" />
 
 </RelativeLayout>

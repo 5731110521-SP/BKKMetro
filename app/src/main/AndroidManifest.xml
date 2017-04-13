@@ -23,7 +23,8 @@
         <activity android:name=".info1" />
         <activity android:name=".info2" />
         <activity android:name=".splip" />
-        <activity android:name=".addMoney"></activity>
+        <activity android:name=".addMoney" />
+        <activity android:name=".menu"></activity>
     </application>
 
 </manifest>

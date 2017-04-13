@@ -69,6 +69,14 @@ public class addMoney extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.menAdd).setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent menuIntent = new Intent(addMoney.this, menu.class);
+                startActivity(menuIntent);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_left);
+            }
+        });
+
     }//end onCreate
 
     private void DialogBox(String mes){
