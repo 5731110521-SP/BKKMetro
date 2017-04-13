@@ -67,11 +67,6 @@ public class info1 extends AppCompatActivity {
     public boolean mybtnContClicked(View v){
         mail=formMail.getText().toString();
         phone=formPhone.getText().toString();
-
-        if(passengerList.checkInList(mail,phone)){
-            DialogBox("Email or Phone Number is already used");
-            return false;
-        }
         return true;
     }
 
