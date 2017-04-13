@@ -15,13 +15,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity><activity android:name=".login" />
+        </activity>
+        <activity android:name=".login" />
         <activity android:name=".info0" />
         <activity android:name=".forgot" />
         <activity android:name=".dash" />
         <activity android:name=".info1" />
         <activity android:name=".info2" />
-
+        <activity android:name=".splip" />
+        <activity android:name=".addMoney" />
+        <activity android:name=".menu"></activity>
     </application>
 
 </manifest>
