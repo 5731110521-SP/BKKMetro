@@ -26,7 +26,7 @@ public class forgot extends AppCompatActivity {
                     DialogBox("กรุณากรอกอีเมล");
                 }else if(email.indexOf("@")==-1) {
                     DialogBox("กรุณากรอกข้อมูลให้ถูกต้อง");
-                }else if (!passengerList.checkInList(email,"")){
+                }else if (!passengerList.checkEmailInList(email)){
                         DialogBox("ไม่มีอีเมลนี้ในระบบ");
                 }else {
                         DialogBoxNext("ส่งไปยังอีเมลเรียบร้อย");

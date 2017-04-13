@@ -15,9 +15,15 @@ class passengerList {
         passengerlist.add(new passenger(email,pass,phone));
     }
 
-    public static boolean checkInList(String email,String phone){
+    public static boolean checkEmailInList(String email){
         for(int i =0;i<passengerlist.size();i++){
             if (email.equals(passengerlist.get(i).getEmail()))return true;
+        }
+        return false;
+    }
+
+    public static boolean checkPhoneInList(String phone){
+        for(int i =0;i<passengerlist.size();i++){
             if (phone.equals(passengerlist.get(i).getPhone()))return true;
         }
         return false;
