@@ -56,7 +56,7 @@ public class login extends AppCompatActivity {
         pass=formPass.getText().toString();
         if(email.length()<=0 || pass.length()<=0){
             DialogBox("กรุณากรอกข้อมูลให้ถูกต้อง");
-        }else if(!passengerList.checkEmailPass(email,pass)){
+        }else if(!passengerList.login(email,pass)){
             DialogBox("อีเมลหรือรหัสผ่านผิดพลาด");
         }else{
             //DialogBox("Login Successful :)");
