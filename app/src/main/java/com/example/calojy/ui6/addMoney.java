@@ -43,13 +43,16 @@ public class addMoney extends AppCompatActivity {
 
         sp1=(Spinner)findViewById(R.id.spinner1);
         ArrayList<ItemData> list=new ArrayList<>();
-        list.add(new ItemData("Choose Bank",R.drawable.iconbank0));
-        list.add(new ItemData("Krugsi",R.drawable.iconbank1));
-        list.add(new ItemData("TMB",R.drawable.iconbank2));
-        list.add(new ItemData("Krugtep",R.drawable.iconbank3));
-        list.add(new ItemData("Kasikorn",R.drawable.iconbank4));
-        list.add(new ItemData("Krugthai",R.drawable.iconbank5));
-        list.add(new ItemData("Thaipanit",R.drawable.iconbank6));
+        ArrayList<bankAccount> bankAccounts = passengerList.currentUser.getBankAccounts();
+        for(int i=0;i<bankAccounts.size();i++){
+            Integer imageID;
+            if(bankAccounts.get(i).getBankName().equals("ธนาคารกรุงศรี"))imageID=R.drawable.iconbank1;
+            else if(bankAccounts.get(i).getBankName().equals("ธนาคารกรุงเทพ"))imageID=R.drawable.iconbank3;
+            else if(bankAccounts.get(i).getBankName().equals("ธนาคารกสิกร"))imageID=R.drawable.iconbank4;
+            else if(bankAccounts.get(i).getBankName().equals("ธนาคารกรุงไทย"))imageID=R.drawable.iconbank5;
+            else imageID=R.drawable.iconbank6;
+            list.add(new ItemData(bankAccounts.get(i).getBankID(),imageID));
+        }
 
         SimpleImageArrayAdapter adapter=new SimpleImageArrayAdapter(this,
                 R.layout.spinner_layout,R.id.txt,list);
@@ -86,7 +89,7 @@ public class addMoney extends AppCompatActivity {
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //user.setBalance(money+User.getBalance());
+                passengerList.currentUser.setBalance(money+passengerList.currentUser.getBalance());
                 Intent dash = new Intent(addMoney.this, splip.class);
                 startActivity(dash);
             }
