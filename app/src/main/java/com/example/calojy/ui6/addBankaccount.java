@@ -3,62 +3,59 @@ package com.example.calojy.ui6;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-public class info2 extends AppCompatActivity {
-    EditText formAcc;
+public class addBankaccount extends AppCompatActivity {
+
+    EditText formAcc,formName;
     Spinner sp;
-    String acc;
+    String acc,name;
     String bank;
     info0 n=new info0();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info2);
+        setContentView(R.layout.activity_add_bankaccount);
 
+        formName=(EditText) findViewById(R.id.name);
         formAcc=(EditText) findViewById(R.id.accNo);
         sp=(Spinner)findViewById(R.id.spinner);
 
         findViewById(R.id.fin).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                int num = (int) sp.getSelectedItemId();
                 acc=formAcc.getText().toString();
                 bank=((ItemData)sp.getSelectedItem()).getText();
-                if(acc.length()!=10 || bank.equals("Choose Bank")){
+                int num = (int) sp.getSelectedItemId();
+                name = formName.getText().toString();
+
+                if(acc.length()!=10 || bank.equals("Choose Bank") || name.length()<=0){
+                    if(name.length()<=0){formName.setText("");}
                     DialogBox("กรุณากรอกข้อมูลให้ถูกต้อง");
                 }else {
-                    passengerList.name_list.set(0,passengerList.nameB);
-                    passengerList.bank_list.set(0,passengerList.nameBank[num-1]);
-                    passengerList.resId_list.set(0,passengerList.icon[num-1]);
-                    passengerList.des_list.set(0,acc);
-                    //passengerList.pos++;
-                    DialogBoxNext("สมัครสมาชิกสำเร็จ");
+                    passengerList.bank_list.add(passengerList.nameBank[num-1]);
+                    passengerList.resId_list.add(passengerList.icon[num-1]);
+                    passengerList.des_list.add(acc);
+                    passengerList.name_list.add(name);
+                    passengerList.pos++;
+                    DialogBoxNext("เพิ่มบัญชีธนาคารสำเร็จ");
                 }
 
-            }
-        });
-        findViewById(R.id.back2).setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent info0Intent = new Intent(info2.this, info0.class);
-                startActivity(info0Intent);
             }
         });
 
         findViewById(R.id.cancel2).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent loginIntent = new Intent(info2.this, login.class);
+                Intent loginIntent = new Intent(addBankaccount.this, viewBankAccount.class);
                 startActivity(loginIntent);
             }
         });
-
-
-
 
         ArrayList<ItemData> list=new ArrayList<>();
         list.add(new ItemData("Choose Bank",R.drawable.iconbank0));
@@ -94,9 +91,8 @@ public class info2 extends AppCompatActivity {
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent dashIntent = new Intent(info2.this, viewBankAccount.class);
+                Intent dashIntent = new Intent(addBankaccount.this, viewBankAccount.class);
                 startActivity(dashIntent);
-                passengerList.addInList(info0.mail,info0.p1,info0.phone,0);
             }
         });
         alertDialog.show();

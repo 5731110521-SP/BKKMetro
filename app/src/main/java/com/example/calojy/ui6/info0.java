@@ -55,6 +55,7 @@ public class info0 extends AppCompatActivity {
                 }
                 else {
                     if (mybtnContClicked(v)) {
+                        passengerList.nameB = name;
                         Intent info2Intent = new Intent(info0.this, info2.class);
                         startActivity(info2Intent);
                     } else {
