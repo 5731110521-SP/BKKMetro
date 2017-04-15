@@ -10,7 +10,7 @@ class passengerList {
     public static ArrayList<passenger> passengerlist = new ArrayList<>();
 
     public static passenger currentUser;
-
+    public static int current;
 
     public static void initList() {
         if(passengerlist.isEmpty()){
@@ -44,6 +44,7 @@ class passengerList {
             if (email.equals(passengerlist.get(i).getEmail())
                     && pass.equals(passengerlist.get(i).getPass())){
                 currentUser=passengerlist.get(i);
+                current=i;
                 return true;
             }
         }

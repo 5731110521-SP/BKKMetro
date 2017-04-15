@@ -60,6 +60,7 @@ public class login extends AppCompatActivity {
             DialogBox("อีเมลหรือรหัสผ่านผิดพลาด");
         }else{
             //DialogBox("Login Successful :)");
+
             Intent dashh=new Intent(login.this,dash.class);
             startActivity(dashh);
         }
@@ -68,7 +69,7 @@ public class login extends AppCompatActivity {
 
     private void DialogBox(String mes){
         AlertDialog alertDialog=new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("แจ้งเตือน");
+        alertDialog.setTitle("");
         alertDialog.setMessage(mes);
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

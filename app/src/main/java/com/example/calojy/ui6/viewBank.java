@@ -47,7 +47,7 @@ public class viewBank extends AppCompatActivity {
 
     private void DialogBoxNext(String mes){
         AlertDialog alertDialog=new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("แจ้งเตือน");
+        alertDialog.setTitle("");
         alertDialog.setMessage(mes);
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class viewBank extends AppCompatActivity {
 
     private void DialogBox(String mes){
         AlertDialog alertDialog=new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("แจ้งเตือน");
+        alertDialog.setTitle("");
         alertDialog.setMessage(mes);
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

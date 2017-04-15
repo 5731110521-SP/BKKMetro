@@ -69,7 +69,6 @@ public class addBankaccount extends AppCompatActivity {
                     bankAccount.addBankaccount(acc,name,num-1);
                     DialogBoxNext("เพิ่มบัญชีธนาคารสำเร็จ");
                 }
-                    //passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccount.pos);
 
 
             }
@@ -211,7 +210,7 @@ public class addBankaccount extends AppCompatActivity {
 
     private void DialogBox(String mes){
         AlertDialog alertDialog=new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("แจ้งเตือน");
+        alertDialog.setTitle("");
         alertDialog.setMessage(mes);
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
@@ -224,7 +223,7 @@ public class addBankaccount extends AppCompatActivity {
 
     private void DialogBoxNext(String mes){
         AlertDialog alertDialog=new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("แจ้งเตือน");
+        alertDialog.setTitle("");
         alertDialog.setMessage(mes);
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override

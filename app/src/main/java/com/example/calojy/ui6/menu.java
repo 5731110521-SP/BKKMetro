@@ -15,7 +15,7 @@ public class menu extends AppCompatActivity {
         findViewById(R.id.toAcc).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent log = new Intent(menu.this,dash.class);
+                Intent log = new Intent(menu.this,changePass.class);
                 startActivity(log);
             }
         });
