@@ -1,0 +1,82 @@
+﻿Merge remote-tracking branch 'refs/remotes/origin/master' into da
+
+# Conflicts:
+#	.idea/libraries/design_25_0_1.xml
+#	.idea/libraries/recyclerview_v7_25_0_1.xml
+#	.idea/libraries/transition_25_0_1.xml
+#	app/build.gradle
+#	app/src/main/AndroidManifest.xml
+#	app/src/main/java/com/example/calojy/ui6/info0.java
+#	app/src/main/java/com/example/calojy/ui6/info2.java
+#	app/src/main/java/com/example/calojy/ui6/passengerList.java
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch da
+# Your branch is up-to-date with 'origin/da'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	new file:   .idea/.name
+#	new file:   .idea/libraries/android_android_25.xml
+#	modified:   .idea/libraries/animated_vector_drawable_25_1_0.xml
+#	modified:   .idea/libraries/appcompat_v7_25_1_0.xml
+#	modified:   .idea/libraries/constraint_layout_1_0_2.xml
+#	modified:   .idea/libraries/constraint_layout_solver_1_0_2.xml
+#	new file:   .idea/libraries/design_25_0_1.xml
+#	modified:   .idea/libraries/espresso_core_2_2_2.xml
+#	modified:   .idea/libraries/espresso_idling_resource_2_2_2.xml
+#	modified:   .idea/libraries/exposed_instrumentation_api_publish_0_5.xml
+#	new file:   .idea/libraries/recyclerview_v7_25_0_1.xml
+#	modified:   .idea/libraries/rules_0_5.xml
+#	modified:   .idea/libraries/runner_0_5.xml
+#	modified:   .idea/libraries/support_annotations_25_1_0.xml
+#	modified:   .idea/libraries/support_compat_25_1_0.xml
+#	modified:   .idea/libraries/support_core_ui_25_1_0.xml
+#	modified:   .idea/libraries/support_core_utils_25_1_0.xml
+#	modified:   .idea/libraries/support_fragment_25_1_0.xml
+#	modified:   .idea/libraries/support_media_compat_25_1_0.xml
+#	modified:   .idea/libraries/support_v4_25_1_0.xml
+#	modified:   .idea/libraries/support_vector_drawable_25_1_0.xml
+#	new file:   .idea/libraries/transition_25_0_1.xml
+#	modified:   .idea/misc.xml
+#	deleted:    .idea/vcs.xml
+#	modified:   README.md
+#	modified:   app/build.gradle
+#	modified:   app/src/main/AndroidManifest.xml
+#	modified:   app/src/main/java/com/example/calojy/ui6/addMoney.java
+#	new file:   app/src/main/java/com/example/calojy/ui6/bankAccount.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/dash.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/forgot.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/info0.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/info1.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/info2.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/login.java
+#	new file:   app/src/main/java/com/example/calojy/ui6/menu.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/passenger.java
+#	modified:   app/src/main/java/com/example/calojy/ui6/passengerList.java
+#	new file:   app/src/main/res/anim/pull_in_left.xml
+#	new file:   app/src/main/res/anim/pull_in_right.xml
+#	new file:   app/src/main/res/anim/push_out_left.xml
+#	new file:   app/src/main/res/anim/push_out_right.xml
+#	new file:   app/src/main/res/drawable/login2.png
+#	new file:   app/src/main/res/drawable/logoonly.png
+#	new file:   app/src/main/res/drawable/menu.png
+#	new file:   app/src/main/res/drawable/rounded_corner_background.xml
+#	modified:   app/src/main/res/layout/activity_add_money.xml
+#	modified:   app/src/main/res/layout/activity_dash.xml
+#	modified:   app/src/main/res/layout/activity_info0.xml
+#	modified:   app/src/main/res/layout/activity_info2.xml
+#	modified:   app/src/main/res/layout/activity_login.xml
+#	new file:   app/src/main/res/layout/activity_menu.xml
+#	modified:   app/src/main/res/layout/activity_splash.xml
+#
+

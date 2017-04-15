@@ -24,9 +24,13 @@
         <activity android:name=".info2" />
         <activity android:name=".splip" />
         <activity android:name=".addMoney" />
+<<<<<<< HEAD
         <activity android:name=".viewBankAccount" />
         <activity android:name=".addBankaccount" />
         <activity android:name=".viewBank"></activity>
+=======
+        <activity android:name=".menu"></activity>
+>>>>>>> refs/remotes/origin/master
     </application>
 
 </manifest>
