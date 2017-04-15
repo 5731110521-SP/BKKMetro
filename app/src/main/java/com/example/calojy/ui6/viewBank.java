@@ -20,20 +20,16 @@ public class viewBank extends AppCompatActivity {
         setAcc = (TextView) findViewById(R.id.setAcc);
         setBank = (TextView) findViewById(R.id.setBank);
 
-        viewBank.setName.setText(passengerList.nameB);
-        viewBank.setAcc.setText(passengerList.accB);
-        viewBank.setBank.setText(passengerList.bankB);
+        viewBank.setName.setText(bankAccount.nameB);
+        viewBank.setAcc.setText(bankAccount.accB);
+        viewBank.setBank.setText(bankAccount.bankB);
 
         findViewById(R.id.delete).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                if(passengerList.pos==1|| passengerList.resId_list.size()==1 || passengerList.bank_list.size()==1){
+                if(bankAccount.acc_list.size() ==1|| bankAccount.resId_list.size()==1 || bankAccount.bank_list.size()==1 || bankAccount.name_list.size()==1){
                     DialogBox("ไม่สามารถลบบัญชีได้");
                 }else {
-                    passengerList.pos--;
-                    passengerList.name_list.remove(passengerList.pos);
-                    passengerList.des_list.remove(passengerList.pos);
-                    passengerList.bank_list.remove(passengerList.pos);
-                    passengerList.resId_list.remove(passengerList.pos);
+                    bankAccount.deleteBankaccount(bankAccount.pos);
                     DialogBoxNext("ลบบัญชีธนาคารสำเร็จ");
                 }
             }

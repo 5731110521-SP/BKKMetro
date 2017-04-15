@@ -8,35 +8,20 @@ import java.util.List;
 class passengerList {
 
     public static ArrayList<passenger> passengerlist = new ArrayList<>();
-<<<<<<< HEAD
-    public static String nameB = "",accB="",bankB="";
-    public static String[] list = {"Krungsri"};
-    public static String[] des = {"1234567890"};
-    public static String[] name1 = {"P"};
-    public static Integer[] resId = {R.drawable.iconbank1};
-    public static int[] icon ={R.drawable.iconbank1,R.drawable.iconbank2,R.drawable.iconbank3,R.drawable.iconbank4,R.drawable.iconbank5,R.drawable.iconbank6};
-    public static String[] nameBank ={"Krungsri","TMB","Krungthep","Kasikorn","Krungthai","Thaipanit"};
-    public static List<String> bank_list = new ArrayList<String>(Arrays.asList(list));
-    public static List<String> des_list = new ArrayList<String>(Arrays.asList(des));
-    public static List<Integer> resId_list = new ArrayList<Integer>(Arrays.<Integer>asList(resId));
-    public static List<String> name_list = new ArrayList<String>(Arrays.asList(name1));
-    public static int pos = 1;
 
-
-=======
     public static passenger currentUser;
->>>>>>> refs/remotes/origin/master
+
 
     public static void initList() {
         if(passengerlist.isEmpty()){
-            ArrayList<bankAccount> bankAccounts = new ArrayList<>();
-            bankAccounts.add(new bankAccount("123-4-56789-0","ธนาคารกสิกร"));
-            addInList("test@test.com","555","012-345-6789",0,bankAccounts);
+            //String bankID,String bankName,String name,int num
+            //bankAccount.addBankaccount("123-4-56789-0","dd",3);
+            addInList("test@test.com","555","012-345-6789",0,bankAccount.pos);
         }
     }
 
-    public static void addInList(String email,String pass,String phone,int balance,ArrayList<bankAccount> bankAccounts){
-        passengerlist.add(new passenger(email,pass,phone,balance,bankAccounts));
+    public static void addInList(String email,String pass,String phone,int balance,int bankNumInList){
+        passengerlist.add(new passenger(email,pass,phone,balance,bankNumInList));
         login(email,pass);
     }
 

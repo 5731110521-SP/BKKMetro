@@ -7,14 +7,15 @@ public class passenger {
     private String email;
     private String phone;
     private String pass;
-    private int balance;
+    private int balance, bankNumInList;
     private ArrayList<bankAccount> bankAccounts;
 
-    public passenger(String email,String pass,String phone,int balance,ArrayList<bankAccount> bankAccounts){
+    public passenger(String email,String pass,String phone,int balance,int bankNumInList){
         this.email=email;
         this.phone=phone;
         this.pass=pass;
         this.balance=balance;
+        this.bankNumInList = bankNumInList;
         this.bankAccounts=bankAccounts;
     }
 

@@ -18,16 +18,17 @@ public class viewBankAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_bank_account);
 
-        final customAdapter adapter =new customAdapter(getApplicationContext(), passengerList.bank_list, passengerList.resId_list, passengerList.des_list);
+        final customAdapter adapter =new customAdapter(getApplicationContext(), bankAccount.bank_list, bankAccount.resId_list, bankAccount.acc_list);
         //final customAdapter adapter1 = new customAdapter(getApplicationContext(), passengerList.list, passengerList.resId, passengerList.des);
         ListView listView = (ListView)findViewById(R.id.listview1);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Intent intent;
-                passengerList.nameB = passengerList.name_list.get(arg2);
-                passengerList.accB = passengerList.des_list.get(arg2);
-                passengerList.bankB = passengerList.bank_list.get(arg2);
+                bankAccount.nameB = bankAccount.name_list.get(arg2);
+                bankAccount.accB = bankAccount.acc_list.get(arg2);
+                bankAccount.bankB = bankAccount.bank_list.get(arg2);
+                bankAccount.pos = arg2;
                 intent = new Intent(getApplicationContext(), viewBank.class);
                 startActivity(intent);
             }
@@ -43,6 +44,13 @@ public class viewBankAccount extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.menAdd).setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent menu = new Intent(viewBankAccount.this, menu.class);
+                startActivity(menu);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_left);
+            }
+        });
 
     }
 }

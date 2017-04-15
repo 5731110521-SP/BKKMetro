@@ -15,7 +15,7 @@ public class menu extends AppCompatActivity {
         findViewById(R.id.toAcc).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent log = new Intent(menu.this,login.class);
+                Intent log = new Intent(menu.this,dash.class);
                 startActivity(log);
             }
         });
@@ -38,9 +38,11 @@ public class menu extends AppCompatActivity {
         findViewById(R.id.toOut).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(menu.this, login.class);
+                Intent log = new Intent(menu.this,viewBankAccount.class);
+                startActivity(log);
+                /*Intent i = new Intent(menu.this, login.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(i);
+                startActivity(i);*/
             }
         });
 

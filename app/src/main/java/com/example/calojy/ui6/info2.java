@@ -119,11 +119,14 @@ public class info2 extends AppCompatActivity {
                 }else if(bank.equals("เลือกธนาคาร")){
                     DialogBox("กรุณาเลือกธนาคาร");
                 }else {
-                    passengerList.name_list.set(0,passengerList.nameB);
-                    passengerList.bank_list.set(0,passengerList.nameBank[num-1]);
-                    passengerList.resId_list.set(0,passengerList.icon[num-1]);
-                    passengerList.des_list.set(0,acc);
-                    //passengerList.pos++;
+                    bankAccount.name_list.set(0,bankAccount.nameB);
+                    bankAccount.bank_list.set(0,bankAccount.nameBank[num-1]);
+                    bankAccount.resId_list.set(0,bankAccount.icon[num-1]);
+                    bankAccount.acc_list.set(0,acc);
+                    //bankAccount.pos++;
+
+                    passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccount.pos);
+
                     DialogBoxNext("สมัครสมาชิกสำเร็จ");
                 }
 
@@ -147,22 +150,14 @@ public class info2 extends AppCompatActivity {
 
 
         ArrayList<ItemData> list=new ArrayList<>();
-<<<<<<< HEAD
-        list.add(new ItemData("Choose Bank",R.drawable.iconbank0));
-        list.add(new ItemData("Krungsri",R.drawable.iconbank1));
-        list.add(new ItemData("TMB",R.drawable.iconbank2));
-        list.add(new ItemData("Krungthep",R.drawable.iconbank3));
-        list.add(new ItemData("Kasikorn",R.drawable.iconbank4));
-        list.add(new ItemData("Krungthai",R.drawable.iconbank5));
-        list.add(new ItemData("Thaipanit",R.drawable.iconbank6));
-=======
+
         list.add(new ItemData("เลือกธนาคาร",R.drawable.iconbank0));
         list.add(new ItemData("ธนาคารกรุงศรี",R.drawable.iconbank1));
+        list.add(new ItemData("ธนาคารทหารไทย",R.drawable.iconbank2));
         list.add(new ItemData("ธนาคารกรุงเทพ",R.drawable.iconbank3));
         list.add(new ItemData("ธนาคารกสิกร",R.drawable.iconbank4));
         list.add(new ItemData("ธนาคารกรุงไทย",R.drawable.iconbank5));
         list.add(new ItemData("ธนาคารไทยพานิชย์",R.drawable.iconbank6));
->>>>>>> refs/remotes/origin/master
 
         SimpleImageArrayAdapter adapter=new SimpleImageArrayAdapter(this,
                 R.layout.spinner_layout,R.id.txt,list);
@@ -206,11 +201,11 @@ public class info2 extends AppCompatActivity {
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent dashIntent = new Intent(info2.this, viewBankAccount.class);
+                Intent dashIntent = new Intent(info2.this, dash.class);
                 startActivity(dashIntent);
-                ArrayList<bankAccount> bankAccounts = new ArrayList<>();
+                /*ArrayList<bankAccount> bankAccounts = new ArrayList<>();
                 bankAccounts.add(new bankAccount(formAcc.getText().toString(),bank));
-                passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccounts);
+                passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccounts);*/
             }
         });
         alertDialog.show();

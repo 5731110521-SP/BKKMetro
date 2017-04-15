@@ -44,14 +44,18 @@ public class addMoney extends AppCompatActivity {
         sp1=(Spinner)findViewById(R.id.spinner1);
         ArrayList<ItemData> list=new ArrayList<>();
         ArrayList<bankAccount> bankAccounts = passengerList.currentUser.getBankAccounts();
-        for(int i=0;i<bankAccounts.size();i++){
-            Integer imageID;
+        for(int i=0;i<bankAccount.resId_list.size();i++){
+            /*Integer imageID;
             if(bankAccounts.get(i).getBankName().equals("ธนาคารกรุงศรี"))imageID=R.drawable.iconbank1;
             else if(bankAccounts.get(i).getBankName().equals("ธนาคารกรุงเทพ"))imageID=R.drawable.iconbank3;
             else if(bankAccounts.get(i).getBankName().equals("ธนาคารกสิกร"))imageID=R.drawable.iconbank4;
             else if(bankAccounts.get(i).getBankName().equals("ธนาคารกรุงไทย"))imageID=R.drawable.iconbank5;
             else imageID=R.drawable.iconbank6;
             list.add(new ItemData(bankAccounts.get(i).getBankID(),imageID));
+*/
+
+            list.add(new ItemData(bankAccount.acc_list.get(i),bankAccount.resId_list.get(i)));
+
         }
 
         SimpleImageArrayAdapter adapter=new SimpleImageArrayAdapter(this,
