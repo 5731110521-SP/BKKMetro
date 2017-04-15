@@ -27,9 +27,7 @@
         <activity android:name=".viewBankAccount" />
         <activity android:name=".addBankaccount" />
         <activity android:name=".viewBank" />
-        =======
         <activity android:name=".menu" />
-        >>>>>>> refs/remotes/origin/master
         <activity android:name=".changePass"></activity>
     </application>
 
