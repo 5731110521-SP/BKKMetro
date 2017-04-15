@@ -1,0 +1,97 @@
+package com.example.calojy.ui6;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.TreeSet;
+
+public class CustomAdapter extends ArrayAdapter<String> {
+
+    private final Activity context;
+    private final ArrayList<String> itemname;
+    private final ArrayList<Integer> imgid;
+    private final Integer n;
+
+    public CustomAdapter(Activity context, ArrayList<String> itemname, ArrayList<Integer> imgid,Integer n) {
+        super(context, R.layout.mylist, itemname);
+        this.context=context;
+        this.itemname=itemname;
+        this.imgid=imgid;
+        this.n=n;
+    }
+
+    public View getView(int position,View view,ViewGroup parent) {
+        LayoutInflater inflater=context.getLayoutInflater();
+        View rowView=inflater.inflate(R.layout.mylist, null,true);
+        View rowView2=inflater.inflate(R.layout.mylist2, null,true);
+
+        String[] date = {"05/02/2017","14/03/2017","18/04/2017"};
+        String[] week = {"30/01/2017 - 05/02/2017","13/03/2017 - 19/03/2017","17/04/2017 - 23/04/2017"};
+        String[] month = {"กุมภาพันธ์ ","มีนาคม ","เมษายน "};
+        String[] money = {"16 บาท","32 บาท","132 บาท"};
+        String[] x = {"                                                                ","                                      ",
+                        "                                                                        "};
+
+        TextView txtTitle = (TextView) rowView.findViewById(R.id.item);
+        TextView txtTitle2 = (TextView) rowView2.findViewById(R.id.header);
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+        TextView extratxt = (TextView) rowView.findViewById(R.id.itemname);
+
+
+        if(n==1&&position==0){
+            txtTitle2.setTextColor(Color.parseColor("#FF024B51"));
+            txtTitle2.setTextSize(17);
+            txtTitle2.setText(date[0]+x[0]/*+money[0]*/);
+           return rowView2;
+        } else if(n==1&&position==4){
+            txtTitle2.setTextColor(Color.parseColor("#FF024B51"));
+            txtTitle2.setTextSize(17);
+            txtTitle2.setText(date[1]+x[0]/*+money[1]*/);
+            return rowView2;
+        }else if(n==2&&position==0){
+            txtTitle2.setTextColor(Color.parseColor("#FF024B51"));
+            txtTitle2.setTextSize(17);
+            txtTitle2.setText(week[0]+x[1]/*+money[0]*/);
+            return rowView2;
+        }else if(n==2&&position==4){
+            txtTitle2.setTextColor(Color.parseColor("#FF024B51"));
+            txtTitle2.setTextSize(17);
+            txtTitle2.setText(week[1]+x[1]/*+money[1]*/);
+            return rowView2;
+        }else if(n==3&&position==0){
+            txtTitle2.setTextColor(Color.parseColor("#FF024B51"));
+            txtTitle2.setTextSize(17);
+            txtTitle2.setText(month[0]+x[2]/*+money[0]*/);
+            return rowView2;
+        }else if(n==3&&position==4){
+            txtTitle2.setTextColor(Color.parseColor("#FF024B51"));
+            txtTitle2.setTextSize(17);
+            txtTitle2.setText(month[1]+x[2]/*+money[1]*/);
+            return rowView2;
+        }
+
+        if((n==1||n==2||n==3) && (position==1 ||position==5)){
+            txtTitle.setText(itemname.get(position));
+            imageView.setImageResource(imgid.get(position));
+            extratxt.setTextColor(Color.parseColor("#FF809293"));
+            extratxt.setText(" บัญชีธนาคาร: ไทยพาณิชย์\n หมายเลขบัญชี: 123-456789-0\n");
+        }else if((n==1||n==3||n==2) && (position==2||position==3||position==6||position==7)){
+                txtTitle.setText(itemname.get(position));
+                imageView.setImageResource(imgid.get(position));
+                txtTitle.setTextColor(Color.parseColor("#FFFE545D"));
+                extratxt.setTextColor(Color.parseColor("#FF809293"));
+                extratxt.setText(" สถานีต้นทาง: สามย่าน                          7:30" +
+                        "\n สถานีปลายทาง: บางซื่อ                        7:55\n");
+        }
+
+        return rowView;
+
+    };
+}
