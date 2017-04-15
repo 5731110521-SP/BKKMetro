@@ -12,10 +12,13 @@ public class dash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
 
-        findViewById(R.id.back5).setOnClickListener(new View.OnClickListener(){
+
+        findViewById(R.id.menDash).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent info0Intent = new Intent(dash.this, login.class);
-                startActivity(info0Intent);
+                Intent menuIntent = new Intent(dash.this, menu.class);
+                startActivity(menuIntent);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_left);
+
             }
         });
 

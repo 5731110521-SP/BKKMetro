@@ -1,15 +1,21 @@
 package com.example.calojy.ui6;
 
 
+import java.util.ArrayList;
+
 public class passenger {
     private String email;
     private String phone;
     private String pass;
+    private int balance;
+    private ArrayList<bankAccount> bankAccounts;
 
-    public passenger(String email,String pass,String phone){
+    public passenger(String email,String pass,String phone,int balance,ArrayList<bankAccount> bankAccounts){
         this.email=email;
         this.phone=phone;
         this.pass=pass;
+        this.balance=balance;
+        this.bankAccounts=bankAccounts;
     }
 
     public String getPhone() {
@@ -23,4 +29,22 @@ public class passenger {
     public String getPass() {
         return pass;
     }
+
+    public ArrayList<bankAccount> getBankAccounts() {
+        return bankAccounts;
+    }
+
+    public boolean addBankAccout(bankAccount bankAccount){
+        bankAccounts.add(bankAccount);
+        return true;
+    }
+
+    public void setPass(String pass) { this.pass = pass;}
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int b){this.balance=b;}
+
 }

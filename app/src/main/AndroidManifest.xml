@@ -22,7 +22,13 @@
         <activity android:name=".dash" />
         <activity android:name=".info1" />
         <activity android:name=".info2" />
+<<<<<<< HEAD
         <activity android:name=".Transaction"></activity>
+=======
+        <activity android:name=".splip" />
+        <activity android:name=".addMoney" />
+        <activity android:name=".menu"></activity>
+>>>>>>> refs/remotes/origin/master
     </application>
 
 </manifest>
