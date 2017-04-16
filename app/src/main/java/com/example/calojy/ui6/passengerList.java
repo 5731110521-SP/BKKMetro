@@ -16,7 +16,7 @@ class passengerList {
         if(passengerlist.isEmpty()){
             //String bankID,String bankName,String name,int num
             //bankAccount.addBankaccount("123-4-56789-0","dd",3);
-            addInList("test@test.com","555","012-345-6789",0,bankAccount.pos);
+            addInList("test@test.com","555","012-345-6789",100,bankAccount.pos);
         }
     }
 
@@ -40,6 +40,7 @@ class passengerList {
     }
 
     public static boolean login(String email,String pass){
+        initList();
         for(int i =0;i<passengerlist.size();i++){
             if (email.equals(passengerlist.get(i).getEmail())
                     && pass.equals(passengerlist.get(i).getPass())){
