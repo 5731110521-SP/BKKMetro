@@ -125,7 +125,7 @@ public class info2 extends AppCompatActivity {
                     bankAccount.acc_list.set(0,acc);
                     //bankAccount.pos++;
 
-                    passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccount.pos);
+                    passengerList.addInList(info0.mail,info0.p1,info0.phone,100,bankAccount.pos);
 
                     DialogBoxNext("สมัครสมาชิกสำเร็จ");
                 }

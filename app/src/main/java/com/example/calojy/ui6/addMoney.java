@@ -94,6 +94,7 @@ public class addMoney extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 passengerList.currentUser.setBalance(money+passengerList.currentUser.getBalance());
+                //passengerList.passengerlist.get(passengerList.current).setBalance(money+passengerList.currentUser.getBalance());
                 Intent dash = new Intent(addMoney.this, splip.class);
                 startActivity(dash);
             }
