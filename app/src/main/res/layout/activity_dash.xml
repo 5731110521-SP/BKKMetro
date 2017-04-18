@@ -118,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="230dp"
-        android:text="End date 5 May 17"
+        android:text="วันสุดท้าย 5 พค 60"
         android:textColor="@color/colorBlack"
         android:textSize="15sp" />
 
