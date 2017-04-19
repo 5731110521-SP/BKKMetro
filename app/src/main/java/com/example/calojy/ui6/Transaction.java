@@ -43,8 +43,9 @@ public class Transaction extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
 
-        trip();
-        topup();
+        //trip();
+        //topup();
+        both();
 
         list=(ListView)findViewById(R.id.tab1);
         list.setAdapter(new CustomAdapter(this, itemm,imgidd,bankname,banknum,1));
@@ -180,6 +181,99 @@ public class Transaction extends Activity {
 
             banknum.add("");
             banknum3.add("");
+        }
+    }
+
+    public void both(){
+        ArrayList<trip> trips = passengerList.currentUser.getTrips();
+        ArrayList<topup> topups = passengerList.currentUser.getTopups();
+        int itr=trips.size()-1;
+        int ito=topups.size()-1;
+        String beforeDate = "";
+        String trbDate="";
+        String tobDate="";
+        while(true) {
+            String trDate="";
+            String toDate="";
+            if(itr<0||ito<0){
+                break;
+            }else if(itr<0){
+                trDate="00/00/0000";
+            }else if(ito<0){
+                toDate="00/00/0000";
+            }else{
+                trDate = trips.get(itr).getDate();
+                toDate = topups.get(ito).getDate();
+            }
+            if (trDate.substring(3, 5).compareTo(toDate.substring(3, 5)) < 0
+                    || (trDate.substring(3, 5).equals(toDate.substring(3, 5))
+                    && trDate.substring(0, 2).compareTo(toDate.substring(0, 2))<0)) {
+                String amount = "+" + Integer.toString(topups.get(ito).getAmount()) + " บาท";
+
+                if (!toDate.equals(beforeDate)) {
+                    itemm.add(toDate);
+                    imgidd.add(R.drawable.addmoney);
+                    bankname.add("");
+                    banknum.add("");
+
+                    itemm2.add(toDate);
+                    imgidd2.add(R.drawable.addmoney);
+                    bankname2.add("");
+                    banknum2.add("");
+                    beforeDate = toDate;
+                    tobDate=toDate;
+                }else if(!toDate.equals(tobDate)){
+                    itemm2.add(toDate);
+                    imgidd2.add(R.drawable.addmoney);
+                    bankname2.add("");
+                    banknum2.add("");
+                    tobDate=toDate;
+                }
+
+                itemm.add(item[0] + item2[0] + amount);
+                itemm2.add(item[0] + item2[0] + amount);
+                imgidd.add(R.drawable.addmoney);
+                imgidd2.add(R.drawable.addmoney);
+
+                bankname.add(topups.get(ito).getBank());
+                bankname2.add(topups.get(ito).getBank());
+
+                banknum.add(topups.get(ito).getBanknumber());
+                banknum2.add(topups.get(ito).getBanknumber());
+                ito--;
+            } else {
+                if (!trDate.equals(beforeDate)) {
+                    itemm.add(trDate);
+                    imgidd.add(R.drawable.paymoney);
+                    bankname.add("");
+                    banknum.add("");
+
+                    itemm3.add(trDate);
+                    imgidd3.add(R.drawable.paymoney);
+                    bankname3.add("");
+                    banknum3.add("");
+                    beforeDate = trDate;
+                    trbDate=trDate;
+                }else if(!trDate.equals(trbDate)){
+                    itemm3.add(trDate);
+                    imgidd3.add(R.drawable.paymoney);
+                    bankname3.add("");
+                    banknum3.add("");
+                    trbDate=trDate;
+                }
+
+                itemm.add(item[1] + item2[1] + item3[1]);
+                itemm3.add(item[1] + item2[1] + item3[1]);
+                imgidd.add(R.drawable.paymoney);
+                imgidd3.add(R.drawable.paymoney);
+
+                bankname.add("");
+                bankname3.add("");
+
+                banknum.add("");
+                banknum3.add("");
+                itr--;
+            }
         }
     }
 
