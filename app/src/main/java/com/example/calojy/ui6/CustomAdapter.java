@@ -14,12 +14,14 @@ import java.util.Date;
 
 public class CustomAdapter extends ArrayAdapter<String> {
 
-    private final Activity context;
-    public static ArrayList<String> itemname;
-    public static ArrayList<Integer> imgid;
-    private final Integer n;
+    private Activity context;
+    public ArrayList<String> itemname;
+    public ArrayList<Integer> imgid;
+    public ArrayList<String> bankname;
+    public ArrayList<String> banknum;
+    private Integer n;
 
-    public CustomAdapter(Activity context, ArrayList<String> itemname,ArrayList<Integer> imgid,Integer n) {
+    public CustomAdapter(Activity context, ArrayList<String> itemname,ArrayList<Integer> imgid,ArrayList<String> bankname,ArrayList<String> banknum,Integer n) {
         super(context, R.layout.mylist, itemname);
         this.context=context;
     //    this.itemname=Transaction.itemm;
@@ -27,6 +29,8 @@ public class CustomAdapter extends ArrayAdapter<String> {
         this.itemname=itemname;
         this.imgid=imgid;
         this.n=n;
+        this.bankname=bankname;
+        this.banknum=banknum;
     }
 
     public View getView(int position,View view,ViewGroup parent) {
@@ -109,7 +113,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
             txtTitle.setText(itemname.get(position));
             imageView.setImageResource(imgid.get(position));
             extratxt.setTextColor(Color.parseColor("#FF809293"));
-            extratxt.setText(" บัญชีธนาคาร: ไทยพาณิชย์\n หมายเลขบัญชี: 123-456789-0\n");
+            extratxt.setText(" บัญชีธนาคาร: "+bankname.get(position)+"\n หมายเลขบัญชี: "+banknum.get(position)+"\n");
         }else if(/*(n==1||n==3||n==2) && (position==2||position==3||position==6||position==7)*/itemname.get(position).contains("ชำระค่าโดยสาร")){
                 txtTitle.setText(itemname.get(position));
                 imageView.setImageResource(imgid.get(position));

@@ -10,7 +10,20 @@ class passengerList {
         if(passengerlist.isEmpty()){
             ArrayList<bankAccount> bankAccounts = new ArrayList<>();
             bankAccounts.add(new bankAccount("123-4-56789-0","ธนาคารกสิกร"));
-            addInList("test@test.com","555","012-345-6789",0,bankAccounts);
+            addInList("a","a","012-345-6789",0,bankAccounts);
+
+            passengerlist.get(0).addTopup(new topup(300,bankAccounts.get(0).getBankName(),bankAccounts.get(0).getBankID(),"10/04/2017"));
+            passengerlist.get(0).addTopup(new topup(200,bankAccounts.get(0).getBankName(),bankAccounts.get(0).getBankID(),"10/04/2017"));
+            passengerlist.get(0).addTopup(new topup(200,bankAccounts.get(0).getBankName(),bankAccounts.get(0).getBankID(),"17/04/2017"));
+
+            trip t = new trip("10/04/2017");
+            passengerlist.get(0).addTrip(t);
+            passengerlist.get(0).addTrip(new trip("11/04/2017"));
+            passengerlist.get(0).addTrip(new trip("15/04/2017"));
+            passengerlist.get(0).addTrip(new trip("16/04/2017"));
+            passengerlist.get(0).addTrip(new trip("17/04/2017"));
+            passengerlist.get(0).addTrip(new trip("17/04/2017"));
+
         }
     }
 

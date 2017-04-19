@@ -18,36 +18,42 @@ import java.util.Date;
 public class Transaction extends Activity {
     ListView list,list2,list3;
 
-    private static String[] item = {"เติมเงิน","ชำระค่าโดยสาร"};
-    private static String[] item2 = {"                                ","                    "};
-    private static String[] item3 = {"+100 บาท","-42 บาท"};
+    private String[] item = {"เติมเงิน","ชำระค่าโดยสาร"};
+    private String[] item2 = {"                                    ","                    "};
+    private String[] item3 = {"+100 บาท","-42 บาท"};
 
-    public static String[] it = {"18/04/2017","เติมเงิน                               +500 บาท"};
-    public static Integer[] itt = {0,R.drawable.addmoney};
+    public String[] it = {"18/04/2017","เติมเงิน                               +500 บาท"};
+    public Integer[] itt = {0,R.drawable.addmoney};
 
-    public static ArrayList<String> itemm = new ArrayList<String>();
-    public static ArrayList<String> itemm2 = new ArrayList<String>();
-    public static ArrayList<String> itemm3 = new ArrayList<String>();
-    public static ArrayList<Integer> imgidd = new ArrayList<Integer>();
-    public static ArrayList<Integer> imgidd2 = new ArrayList<Integer>();
-    public static ArrayList<Integer> imgidd3 = new ArrayList<Integer>();
+    public ArrayList<String> itemm = new ArrayList<String>();
+    public ArrayList<String> itemm2 = new ArrayList<String>();
+    public ArrayList<String> itemm3 = new ArrayList<String>();
+    public ArrayList<Integer> imgidd = new ArrayList<Integer>();
+    public ArrayList<Integer> imgidd2 = new ArrayList<Integer>();
+    public ArrayList<Integer> imgidd3 = new ArrayList<Integer>();
+    public ArrayList<String> bankname = new ArrayList<>();
+    public ArrayList<String> bankname2 = new ArrayList<>();
+    public ArrayList<String> bankname3 = new ArrayList<>();
+    public ArrayList<String> banknum = new ArrayList<>();
+    public ArrayList<String> banknum2 = new ArrayList<>();
+    public ArrayList<String> banknum3 = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
 
-        topup();
         trip();
+        topup();
 
         list=(ListView)findViewById(R.id.tab1);
-        list.setAdapter(new CustomAdapter(this, itemm,imgidd,1));
+        list.setAdapter(new CustomAdapter(this, itemm,imgidd,bankname,banknum,1));
 
         list2=(ListView)findViewById(R.id.tab2);
-        list2.setAdapter(new CustomAdapter(this, itemm2,imgidd2,2));
+        list2.setAdapter(new CustomAdapter(this, itemm2,imgidd2,bankname2,banknum2,2));
 
         list3=(ListView)findViewById(R.id.tab3);
-  //      list3.setAdapter(new CustomAdapter(this, itemm3,imgidd3,3));
+        list3.setAdapter(new CustomAdapter(this, itemm3,imgidd3,bankname3,banknum3,3));
 
 
         TabHost tabs=(TabHost)findViewById(R.id.tabhost);
@@ -76,53 +82,105 @@ public class Transaction extends Activity {
 
         spec=tabs.newTabSpec("tag2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("สัปดาห์");
+        spec.setIndicator("เติมเงิน");
         tabs.addTab(spec);
 
         spec=tabs.newTabSpec("tag3");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("เดือน");
+        spec.setIndicator("ชำระค่าโดยสาร");
         tabs.addTab(spec);
     }
 
-    public static void topup(){
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
-        Date todayDate = new Date();
-        String thisDate = currentDate.format(todayDate);
-        boolean b = false;
-        for(int i = 0; i< itemm.size() ;i++){
-            if(itemm.get(i).equals(thisDate)) b = true;
-        }
-        if(!b) {
-            itemm.add(thisDate);
-            itemm2.add(thisDate);
+    public void topup(){
+        ArrayList<topup> topups = passengerList.currentUser.getTopups();
+        for(int i=topups.size()-1;i>-1;i--){
+            String thisDate = topups.get(i).getDate();
+            boolean b = false;
+            boolean b2 = false;
+            boolean find;
+            int index;
+            for(int j = 0; j< itemm.size() ;j++){
+                if(itemm.get(j).equals(thisDate)) {
+                    b = true;
+                    index=j;
+                    break;
+                }
+            }
+            for (int j = 0; j < itemm2.size(); j++) {
+                if (itemm2.get(i).equals(thisDate)) {
+                    b2 = true;
+                    index =j;
+                    break;
+                }
+            }
+            if(!b) {
+                itemm.add(thisDate);
+                imgidd.add(R.drawable.addmoney);
+                bankname.add("");
+                banknum.add("");
+            }
+            if(!b2) {
+                itemm2.add(thisDate);
+                imgidd2.add(R.drawable.addmoney);
+                bankname2.add("");
+                banknum2.add("");
+            }
+            String amount="+"+Integer.toString(topups.get(i).getAmount())+" บาท";
+            itemm.add(item[0]+item2[0]+amount);
+            itemm2.add(item[0]+item2[0]+amount);
             imgidd.add(R.drawable.addmoney);
             imgidd2.add(R.drawable.addmoney);
+
+            bankname.add(topups.get(i).getBank());
+            bankname2.add(topups.get(i).getBank());
+
+            banknum.add(topups.get(i).getBanknumber());
+            banknum2.add(topups.get(i).getBanknumber());
+
         }
-        itemm.add(item[0]+item2[0]+item3[0]);
-        itemm2.add(item[0]+item2[0]+item3[0]);
-        imgidd.add(R.drawable.addmoney);
-        imgidd2.add(R.drawable.addmoney);
     }
 
-    public static void trip(){
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
-        Date todayDate = new Date();
-        String thisDate = currentDate.format(todayDate);
-        boolean b = false;
-        for(int i = 0; i< itemm.size() ;i++){
-            if(itemm.get(i).equals(thisDate)) b = true;
-        }
-        if(!b) {
-            itemm.add(thisDate);
-            itemm3.add(thisDate);
+    public void trip(){
+        ArrayList<trip> trips = passengerList.currentUser.getTrips();
+        for(int j=trips.size()-1;j>-1;j--) {
+            String thisDate = trips.get(j).getDate();
+            boolean b1 = false;
+            boolean b3 = false;
+            for (int i = 0; i < itemm.size(); i++) {
+                if (itemm.get(i).equals(thisDate)) {
+                    b1 = true;
+                    break;
+                }
+            }
+            for (int i = 0; i < itemm3.size(); i++) {
+                if (itemm3.get(i).equals(thisDate)) {
+                    b3 = true;
+                    break;
+                }
+            }
+            if (!b1) {
+                itemm.add(thisDate);
+                imgidd.add(R.drawable.paymoney);
+                bankname.add("");
+                banknum.add("");
+            }
+            if (!b3) {
+                itemm3.add(thisDate);
+                imgidd3.add(R.drawable.paymoney);
+                bankname3.add("");
+                banknum3.add("");
+            }
+            itemm.add(item[1] + item2[1] + item3[1]);
+            itemm3.add(item[1] + item2[1] + item3[1]);
             imgidd.add(R.drawable.paymoney);
             imgidd3.add(R.drawable.paymoney);
+
+            bankname.add("");
+            bankname3.add("");
+
+            banknum.add("");
+            banknum3.add("");
         }
-        itemm.add(item[1]+item2[1]+item3[1]);
-        itemm3.add(item[1]+item2[1]+item3[1]);
-        imgidd.add(R.drawable.paymoney);
-        imgidd3.add(R.drawable.paymoney);
     }
 
 }

@@ -30,7 +30,7 @@ public class menu extends AppCompatActivity {
         findViewById(R.id.toSumm).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent log = new Intent(menu.this,login.class);
+                Intent log = new Intent(menu.this,Transaction.class);
                 startActivity(log);
             }
         });

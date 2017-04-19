@@ -9,6 +9,8 @@ public class passenger {
     private String pass;
     private int balance;
     private ArrayList<bankAccount> bankAccounts;
+    private ArrayList<topup> topups;
+    private ArrayList<trip> trips;
 
     public passenger(String email,String pass,String phone,int balance,ArrayList<bankAccount> bankAccounts){
         this.email=email;
@@ -16,6 +18,18 @@ public class passenger {
         this.pass=pass;
         this.balance=balance;
         this.bankAccounts=bankAccounts;
+        topups = new ArrayList<>();
+        trips = new  ArrayList<>();
+    }
+
+    public boolean addTopup(topup topup){
+        topups.add(topup);
+        return true;
+    }
+
+    public boolean addTrip(trip trip){
+        trips.add(trip);
+        return true;
     }
 
     public String getPhone() {
@@ -47,4 +61,11 @@ public class passenger {
 
     public void setBalance(int b){this.balance=b;}
 
+    public ArrayList<topup> getTopups() {
+        return topups;
+    }
+
+    public ArrayList<trip> getTrips() {
+        return trips;
+    }
 }
