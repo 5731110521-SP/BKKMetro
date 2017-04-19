@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorMain"
         android:minHeight="?attr/actionBarSize"
-        android:paddingStart="90dp"
+        android:paddingLeft="90dp"
+        android:theme="@style/Theme.AppCompat"
         app:title="ประวัติการทำรายการ" />
 
     <ImageButton

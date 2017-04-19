@@ -18,11 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             android:layout_marginStart="30dp"
-<<<<<<< HEAD
             android:layout_marginTop="80dp"
-=======
-            android:layout_marginTop="210dp"
->>>>>>> refs/remotes/origin/master
             android:textColorHint="@color/colorGray"
             app:errorEnabled="true"
             app:hintTextAppearance="@style/MyHintText">
