@@ -22,5 +22,8 @@ public class splip extends AppCompatActivity {
             }
         }, SPLASH_TIME_OUT);
 
+
+
+
     }
 }

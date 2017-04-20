@@ -3,8 +3,8 @@ package com.example.calojy.ui6;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
 import android.view.View;
@@ -13,17 +13,20 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-public class info2 extends AppCompatActivity {
-    EditText formAcc;
+public class addBankaccount extends AppCompatActivity {
+
+    EditText formAcc,formName;
     Spinner sp;
-    String acc;
+    String acc,name;
     String bank;
     info0 n=new info0();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info2);
+        setContentView(R.layout.activity_add_bankaccount);
 
+        formName=(EditText) findViewById(R.id.name);
         formAcc=(EditText) findViewById(R.id.accNo);
         sp=(Spinner)findViewById(R.id.spinner);
 
@@ -35,6 +38,42 @@ public class info2 extends AppCompatActivity {
                 }
             }
         });
+
+        formName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(!view.hasFocus()){
+                    checkName();
+                }
+            }
+        });
+
+        findViewById(R.id.fin).setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+
+                acc=formAcc.getText().toString();
+                bank=((ItemData)sp.getSelectedItem()).getText();
+                int num = (int) sp.getSelectedItemId();
+                name = formName.getText().toString();
+
+                if(checkAcc()){
+
+                }else if(bank.equals("เลือกธนาคาร")){
+                    DialogBox("กรุณาเลือกธนาคาร");
+                }else {
+                    /*passengerList.bank_list.add(passengerList.nameBank[num-1]);
+                    passengerList.resId_list.add(passengerList.icon[num-1]);
+                    passengerList.des_list.add(acc);
+                    passengerList.name_list.add(name);
+                    passengerList.pos++;*/
+                    bankAccount.addBankaccount(acc,name,num-1);
+                    DialogBoxNext("เพิ่มบัญชีธนาคารสำเร็จ");
+                }
+
+
+            }
+        });
+
 
         formAcc.addTextChangedListener(new PhoneNumberFormattingTextWatcher(){
             //we need to know if the user is erasing or inputing some new character
@@ -109,48 +148,24 @@ public class info2 extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.fin).setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                int num = (int) sp.getSelectedItemId();
-                acc=formAcc.getText().toString();
-                bank=((ItemData)sp.getSelectedItem()).getText();
-                if(checkAcc()){
-
-                }else if(bank.equals("เลือกธนาคาร")){
-                    DialogBox("กรุณาเลือกธนาคาร");
-                }else {
-                    bankAccount.name_list.set(0,bankAccount.nameB);
-                    bankAccount.bank_list.set(0,bankAccount.nameBank[num-1]);
-                    bankAccount.resId_list.set(0,bankAccount.icon[num-1]);
-                    bankAccount.acc_list.set(0,acc);
-                    //bankAccount.pos++;
-
-                    passengerList.addInList(info0.mail,info0.p1,info0.phone,100,bankAccount.pos);
-
-                    DialogBoxNext("สมัครสมาชิกสำเร็จ");
-                }
-
-            }
-        });
-        findViewById(R.id.back2).setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent info0Intent = new Intent(info2.this, info0.class);
-                startActivity(info0Intent);
-            }
-        });
 
         findViewById(R.id.cancel2).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent loginIntent = new Intent(info2.this, login.class);
+                Intent loginIntent = new Intent(addBankaccount.this, viewBankAccount.class);
                 startActivity(loginIntent);
             }
         });
 
 
+        findViewById(R.id.backbutton).setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent loginIntent = new Intent(addBankaccount.this, viewBankAccount.class);
+                startActivity(loginIntent);
+            }
+        });
 
 
         ArrayList<ItemData> list=new ArrayList<>();
-
         list.add(new ItemData("เลือกธนาคาร",R.drawable.iconbank0));
         list.add(new ItemData("ธนาคารกรุงศรี",R.drawable.iconbank1));
         list.add(new ItemData("ธนาคารทหารไทย",R.drawable.iconbank2));
@@ -164,6 +179,18 @@ public class info2 extends AppCompatActivity {
         sp.setAdapter(adapter);
 
     }//end onCreate
+
+    private boolean checkName(){
+        formName = (EditText) findViewById(R.id.name);
+        String s =formName.getText().toString().trim();
+        if(s.equalsIgnoreCase("") || !s.contains(" ")){
+            formName.setError("กรุณากรอกชื่อและนามสกุล");
+            return true;
+        }else {
+            formName.setError(null);
+        }
+        return false;
+    }
 
     private boolean checkAcc() {
         formAcc = (EditText) findViewById(R.id.accNo);
@@ -201,11 +228,8 @@ public class info2 extends AppCompatActivity {
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent dashIntent = new Intent(info2.this, dash.class);
+                Intent dashIntent = new Intent(addBankaccount.this, viewBankAccount.class);
                 startActivity(dashIntent);
-                /*ArrayList<bankAccount> bankAccounts = new ArrayList<>();
-                bankAccounts.add(new bankAccount(formAcc.getText().toString(),bank));
-                passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccounts);*/
             }
         });
         alertDialog.show();

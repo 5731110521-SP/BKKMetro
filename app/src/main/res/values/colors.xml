@@ -5,5 +5,9 @@
     <color name="colorAccent">#ff4081</color>
     <color name="colorMain">#024b51</color>
     <color name="colorGray">#809293</color>
+<<<<<<< HEAD
+=======
+    <color name="colorBlack">#000000</color>
+>>>>>>> refs/remotes/origin/master
 
 </resources>
