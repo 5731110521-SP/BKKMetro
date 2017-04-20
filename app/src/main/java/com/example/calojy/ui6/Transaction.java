@@ -1,19 +1,11 @@
 package com.example.calojy.ui6;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.TabHost;
-import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 
 public class Transaction extends Activity {
     ListView list,list2,list3;
@@ -48,13 +40,13 @@ public class Transaction extends Activity {
         both();
 
         list=(ListView)findViewById(R.id.tab1);
-        list.setAdapter(new CustomAdapter(this, itemm,imgidd,bankname,banknum,1));
+        list.setAdapter(new CustomAdapterSummary(this, itemm,imgidd,bankname,banknum,1));
 
         list2=(ListView)findViewById(R.id.tab2);
-        list2.setAdapter(new CustomAdapter(this, itemm2,imgidd2,bankname2,banknum2,2));
+        list2.setAdapter(new CustomAdapterSummary(this, itemm2,imgidd2,bankname2,banknum2,2));
 
         list3=(ListView)findViewById(R.id.tab3);
-        list3.setAdapter(new CustomAdapter(this, itemm3,imgidd3,bankname3,banknum3,3));
+        list3.setAdapter(new CustomAdapterSummary(this, itemm3,imgidd3,bankname3,banknum3,3));
 
 
         TabHost tabs=(TabHost)findViewById(R.id.tabhost);

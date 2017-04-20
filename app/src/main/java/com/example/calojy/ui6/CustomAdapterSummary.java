@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
-public class CustomAdapter extends ArrayAdapter<String> {
+public class CustomAdapterSummary extends ArrayAdapter<String> {
 
     private Activity context;
     public ArrayList<String> itemname;
@@ -21,7 +21,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
     public ArrayList<String> banknum;
     private Integer n;
 
-    public CustomAdapter(Activity context, ArrayList<String> itemname,ArrayList<Integer> imgid,ArrayList<String> bankname,ArrayList<String> banknum,Integer n) {
+    public CustomAdapterSummary(Activity context, ArrayList<String> itemname, ArrayList<Integer> imgid, ArrayList<String> bankname, ArrayList<String> banknum, Integer n) {
         super(context, R.layout.mylist, itemname);
         this.context=context;
     //    this.itemname=Transaction.itemm;

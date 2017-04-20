@@ -22,10 +22,10 @@
         <activity android:name=".dash" />
         <activity android:name=".info1" />
         <activity android:name=".info2" />
-        <activity android:name=".Transaction"></activity>
+        <activity android:name=".Transaction"/>
         <activity android:name=".splip" />
         <activity android:name=".addMoney" />
-        <activity android:name=".menu"></activity>
+        <activity android:name=".menu"/>
     </application>
 
 </manifest>
