@@ -50,8 +50,9 @@ public class changePass extends AppCompatActivity {
         findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 // if has profile class go to profile na
-                Intent loginIntent = new Intent(changePass.this, login.class);
-                startActivity(loginIntent);
+                //Intent loginIntent = new Intent(changePass.this, dash.class);
+                //startActivity(loginIntent);
+                finish();
             }
         });
         findViewById(R.id.ok).setOnClickListener(new View.OnClickListener(){

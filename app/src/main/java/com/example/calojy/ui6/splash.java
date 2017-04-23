@@ -22,5 +22,9 @@ public class splash extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
+
     }
 }
+
+
+

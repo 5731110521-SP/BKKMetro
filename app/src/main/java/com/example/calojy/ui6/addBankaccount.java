@@ -56,7 +56,7 @@ public class addBankaccount extends AppCompatActivity {
                 int num = (int) sp.getSelectedItemId();
                 name = formName.getText().toString();
 
-                if(checkAcc()){
+                if(checkAcc()||checkName()){
 
                 }else if(bank.equals("เลือกธนาคาร")){
                     DialogBox("กรุณาเลือกธนาคาร");
