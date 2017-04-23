@@ -37,7 +37,7 @@ public class Transaction extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
 
-        findViewById(R.id.menAdd).setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.imageButton2).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent menu = new Intent(Transaction.this, menu.class);
                 startActivity(menu);
