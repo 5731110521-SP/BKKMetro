@@ -21,8 +21,6 @@
         <item name="colorControlActivated">@color/colorMain</item>
     </style>
 
-<<<<<<< HEAD
-=======
     <!--text toolbar-->
     <style name="ToolbarTextAppearance">
         <item name="android:fontFamily">sans-serif-condensed</item>
@@ -36,8 +34,6 @@
     <style name="ToolbarTextAppearance.Title">
         <item name="android:textSize">20sp</item>
     </style>
-
->>>>>>> refs/remotes/origin/master
 
 </resources>
 

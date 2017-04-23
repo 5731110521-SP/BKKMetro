@@ -25,15 +25,11 @@
         <activity android:name=".Transaction"/>
         <activity android:name=".splip" />
         <activity android:name=".addMoney" />
-<<<<<<< HEAD
-        <activity android:name=".menu"/>
-=======
         <activity android:name=".viewBankAccount" />
         <activity android:name=".addBankaccount" />
         <activity android:name=".viewBank" />
         <activity android:name=".menu" />
-        <activity android:name=".changePass"></activity>
->>>>>>> refs/remotes/origin/master
+        <activity android:name=".changePass"/>
     </application>
 
 </manifest>

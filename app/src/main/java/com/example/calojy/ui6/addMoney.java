@@ -15,9 +15,10 @@ import java.util.ArrayList;
 
 public class addMoney extends AppCompatActivity {
 
-   public static int money=100;
+   private int money=100;
    Spinner sp1;
    EditText mon;
+    private int choose;
 
 
     @Override
@@ -70,8 +71,9 @@ public class addMoney extends AppCompatActivity {
 
         findViewById(R.id.cancleG).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent dash = new Intent(addMoney.this, dash.class);
-                startActivity(dash);
+                //Intent dash = new Intent(addMoney.this, dash.class);
+                //startActivity(dash);
+                finish();
 
             }
         });
@@ -94,6 +96,8 @@ public class addMoney extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 passengerList.currentUser.setBalance(money+passengerList.currentUser.getBalance());
+                passengerList.currentUser.addTopup(new topup(money,bankAccount.name_list.get(sp1.getSelectedItemPosition())
+                        ,bankAccount.acc_list.get(sp1.getSelectedItemPosition())));
                 //passengerList.passengerlist.get(passengerList.current).setBalance(money+passengerList.currentUser.getBalance());
                 Intent dash = new Intent(addMoney.this, splip.class);
                 startActivity(dash);

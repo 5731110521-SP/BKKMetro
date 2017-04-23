@@ -14,14 +14,16 @@ class passengerList {
 
     public static void initList() {
         if(passengerlist.isEmpty()){
-<<<<<<< HEAD
-            ArrayList<bankAccount> bankAccounts = new ArrayList<>();
-            bankAccounts.add(new bankAccount("123-4-56789-0","ธนาคารกสิกร"));
-            addInList("a","a","012-345-6789",0,bankAccounts);
+            //ArrayList<bankAccount> bankAccounts = new ArrayList<>();
+            //bankAccounts.add(new bankAccount("123-4-56789-0","ธนาคารกสิกร"));
+            //addInList("a","a","012-345-6789",100,bankAccounts);
+            //String bankID,String bankName,String name,int num
+            //bankAccount.addBankaccount("123-4-56789-0","dd",3);
+            addInList("a@.com","a","012-345-6789",290,bankAccount.pos);
 
-            passengerlist.get(0).addTopup(new topup(300,bankAccounts.get(0).getBankName(),bankAccounts.get(0).getBankID(),"11/04/2017"));
-            passengerlist.get(0).addTopup(new topup(100,bankAccounts.get(0).getBankName(),bankAccounts.get(0).getBankID(),"12/04/2017"));
-            passengerlist.get(0).addTopup(new topup(100,bankAccounts.get(0).getBankName(),bankAccounts.get(0).getBankID(),"16/04/2017"));
+            passengerlist.get(0).addTopup(new topup(300,bankAccount.name_list.get(0),bankAccount.acc_list.get(0),"11/04/2017"));
+            passengerlist.get(0).addTopup(new topup(100,bankAccount.name_list.get(0),bankAccount.acc_list.get(0),"12/04/2017"));
+            passengerlist.get(0).addTopup(new topup(100,bankAccount.name_list.get(0),bankAccount.acc_list.get(0),"16/04/2017"));
 
 
             passengerlist.get(0).addTrip(new trip("00/00/0000"));
@@ -30,12 +32,6 @@ class passengerList {
             passengerlist.get(0).addTrip(new trip("16/04/2017"));
             passengerlist.get(0).addTrip(new trip("17/04/2017"));
             passengerlist.get(0).addTrip(new trip("17/04/2017"));
-
-=======
-            //String bankID,String bankName,String name,int num
-            //bankAccount.addBankaccount("123-4-56789-0","dd",3);
-            addInList("test@test.com","555","012-345-6789",100,bankAccount.pos);
->>>>>>> refs/remotes/origin/master
         }
     }
 

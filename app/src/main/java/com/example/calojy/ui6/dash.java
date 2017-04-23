@@ -15,6 +15,7 @@ public class dash extends AppCompatActivity {
 
     private int status = 0;
     public static TextView setBalance;
+    private trip trip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class dash extends AppCompatActivity {
                     });
                     builder.show();
                 }else if(status==1){
+                    trip=new trip();
                         ImageView activity= (ImageView) findViewById(R.id.activate);
                         activity.setBackground(getResources().getDrawable(R.drawable.travelingbut));
                         status=2;
@@ -77,6 +79,8 @@ public class dash extends AppCompatActivity {
                     ImageView activity= (ImageView) findViewById(R.id.activate);
                     activity.setBackground(getResources().getDrawable(R.drawable.activatebut));
                     passengerList.currentUser.setBalance(passengerList.currentUser.getBalance()-42);
+                    trip.checkout();
+                    passengerList.currentUser.addTrip(trip);
                     status=0;
                     dash.setBalance.setText(String.valueOf(passengerList.currentUser.getBalance()));
                 }

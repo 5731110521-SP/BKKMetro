@@ -1,7 +1,9 @@
 package com.example.calojy.ui6;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TabHost;
 
@@ -35,6 +37,13 @@ public class Transaction extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
 
+        findViewById(R.id.menAdd).setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent menu = new Intent(Transaction.this, menu.class);
+                startActivity(menu);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_left);
+            }
+        });
         //trip();
         //topup();
         both();
@@ -268,5 +277,6 @@ public class Transaction extends Activity {
             }
         }
     }
+
 
 }

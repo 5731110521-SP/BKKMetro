@@ -10,14 +10,10 @@ public class passenger {
     private String phone;
     private String pass;
     private int balance;
-<<<<<<< HEAD
-    private ArrayList<bankAccount> bankAccounts;
     private ArrayList<topup> topups;
     private ArrayList<trip> trips;
-=======
     public static List<Integer> bankNumInList = new ArrayList<Integer>(Arrays.<Integer>asList(0));
     private ArrayList<bankAccount> bankAccounts = new ArrayList<>();
->>>>>>> refs/remotes/origin/master
 
     public passenger(String email,String pass,String phone,int balance,int bankNumInList){
         this.email=email;
@@ -69,7 +65,6 @@ public class passenger {
 
     public void setBalance(int b){this.balance=b;}
 
-<<<<<<< HEAD
     public ArrayList<topup> getTopups() {
         return topups;
     }
@@ -77,7 +72,4 @@ public class passenger {
     public ArrayList<trip> getTrips() {
         return trips;
     }
-=======
-
->>>>>>> refs/remotes/origin/master
 }

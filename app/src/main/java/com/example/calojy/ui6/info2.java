@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class info2 extends AppCompatActivity {
-    EditText formAcc;
+    EditText formAcc,formName;
     Spinner sp;
     String acc;
     String bank;
@@ -25,6 +25,7 @@ public class info2 extends AppCompatActivity {
         setContentView(R.layout.activity_info2);
 
         formAcc=(EditText) findViewById(R.id.accNo);
+        formName=(EditText) findViewById(R.id.textInputnamebank);
         sp=(Spinner)findViewById(R.id.spinner);
 
         formAcc.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -32,6 +33,15 @@ public class info2 extends AppCompatActivity {
             public void onFocusChange(View view, boolean b) {
                 if(!view.hasFocus()){
                     checkAcc();
+                }
+            }
+        });
+
+        formName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(!view.hasFocus()){
+                    checkName();
                 }
             }
         });
@@ -114,11 +124,12 @@ public class info2 extends AppCompatActivity {
                 int num = (int) sp.getSelectedItemId();
                 acc=formAcc.getText().toString();
                 bank=((ItemData)sp.getSelectedItem()).getText();
-                if(checkAcc()){
+                if(checkAcc()||checkName()){
 
                 }else if(bank.equals("เลือกธนาคาร")){
                     DialogBox("กรุณาเลือกธนาคาร");
                 }else {
+                    bankAccount.nameB=((EditText)findViewById(R.id.textInputname)).getText().toString().trim();
                     bankAccount.name_list.set(0,bankAccount.nameB);
                     bankAccount.bank_list.set(0,bankAccount.nameBank[num-1]);
                     bankAccount.resId_list.set(0,bankAccount.icon[num-1]);
@@ -177,6 +188,18 @@ public class info2 extends AppCompatActivity {
             return true;
         }else{
             formAcc.setError(null);
+        }
+        return false;
+    }
+
+    private boolean checkName(){
+        formName = (EditText) findViewById(R.id.name);
+        String s =formName.getText().toString().trim();
+        if(s.equalsIgnoreCase("") || !s.contains(" ")){
+            formName.setError("กรุณากรอกชื่อและนามสกุล");
+            return true;
+        }else {
+            formName.setError(null);
         }
         return false;
     }
