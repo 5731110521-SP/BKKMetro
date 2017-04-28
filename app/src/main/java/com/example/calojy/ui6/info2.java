@@ -25,7 +25,7 @@ public class info2 extends AppCompatActivity {
         setContentView(R.layout.activity_info2);
 
         formAcc=(EditText) findViewById(R.id.accNo);
-        formName=(EditText) findViewById(R.id.textInputnamebank);
+        formName=(EditText) findViewById(R.id.namebank);
         sp=(Spinner)findViewById(R.id.spinner);
 
         formAcc.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -129,14 +129,14 @@ public class info2 extends AppCompatActivity {
                 }else if(bank.equals("เลือกธนาคาร")){
                     DialogBox("กรุณาเลือกธนาคาร");
                 }else {
-                    bankAccount.nameB=((EditText)findViewById(R.id.textInputname)).getText().toString().trim();
+                    bankAccount.nameB=((EditText)findViewById(R.id.namebank)).getText().toString().trim();
                     bankAccount.name_list.set(0,bankAccount.nameB);
                     bankAccount.bank_list.set(0,bankAccount.nameBank[num-1]);
                     bankAccount.resId_list.set(0,bankAccount.icon[num-1]);
                     bankAccount.acc_list.set(0,acc);
                     //bankAccount.pos++;
 
-                    passengerList.addInList(info0.mail,info0.p1,info0.phone,100,bankAccount.pos);
+                    passengerList.addInList(info0.mail,info0.p1,info0.phone,0,bankAccount.pos);
 
                     DialogBoxNext("สมัครสมาชิกสำเร็จ");
                 }
@@ -193,7 +193,7 @@ public class info2 extends AppCompatActivity {
     }
 
     private boolean checkName(){
-        formName = (EditText) findViewById(R.id.name);
+        formName = (EditText) findViewById(R.id.namebank);
         String s =formName.getText().toString().trim();
         if(s.equalsIgnoreCase("") || !s.contains(" ")){
             formName.setError("กรุณากรอกชื่อและนามสกุล");

@@ -29,8 +29,21 @@ public class trip {
         this.date = currentDate.format(date);
     }
 
+    public trip(int fare){
+        this.fare=fare;
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        this.date = currentDate.format(date);
+    }
+
     public trip(String date){
         this.date=date;
+        fare=42;
+    }
+
+    public trip(String date,int fare){
+        this.date=date;
+        this.fare=fare;
     }
 
     public void checkout(){

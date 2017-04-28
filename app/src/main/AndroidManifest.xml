@@ -22,15 +22,16 @@
         <activity android:name=".dash" />
         <activity android:name=".info1" />
         <activity android:name=".info2" />
-        <activity android:name=".Transaction"/>
+        <activity android:name=".Transaction" />
         <activity android:name=".splip" />
         <activity android:name=".addMoney" />
         <activity android:name=".viewBankAccount" />
         <activity android:name=".addBankaccount" />
         <activity android:name=".viewBank" />
         <activity android:name=".menu" />
-        <activity android:name=".changePass"/>
+        <activity android:name=".changePass" />
+        <activity android:name=".chooseAdd" />
+        <activity android:name=".addDay"></activity>
     </application>
 
 </manifest>
-

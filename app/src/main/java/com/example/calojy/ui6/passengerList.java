@@ -21,10 +21,11 @@ class passengerList {
             //bankAccount.addBankaccount("123-4-56789-0","dd",3);
             addInList("a@.com","a","012-345-6789",290,bankAccount.pos);
 
-            passengerlist.get(0).addTopup(new topup(300,bankAccount.name_list.get(0),bankAccount.acc_list.get(0),"11/04/2017"));
-            passengerlist.get(0).addTopup(new topup(100,bankAccount.name_list.get(0),bankAccount.acc_list.get(0),"12/04/2017"));
-            passengerlist.get(0).addTopup(new topup(100,bankAccount.name_list.get(0),bankAccount.acc_list.get(0),"16/04/2017"));
+            passengerlist.get(0).addTopup(new topup(300,bankAccount.bank_list.get(0),bankAccount.acc_list.get(0),"11/04/2017"));
+            passengerlist.get(0).addTopup(new topup(100,bankAccount.bank_list.get(0),bankAccount.acc_list.get(0),"12/04/2017"));
+            passengerlist.get(0).addTopup(new topup(1500,bankAccount.bank_list.get(0),bankAccount.acc_list.get(0),"16/04/2017"));
 
+            passengerlist.get(0).setDay(15);
 
             passengerlist.get(0).addTrip(new trip("00/00/0000"));
             passengerlist.get(0).addTrip(new trip("11/04/2017"));
@@ -32,12 +33,15 @@ class passengerList {
             passengerlist.get(0).addTrip(new trip("16/04/2017"));
             passengerlist.get(0).addTrip(new trip("17/04/2017"));
             passengerlist.get(0).addTrip(new trip("17/04/2017"));
+            passengerlist.get(0).addTrip(new trip("18/04/2017",1400));
+            passengerlist.get(0).addTrip(new trip("19/04/2017",0));
         }
     }
 
     public static void addInList(String email,String pass,String phone,int balance,int bankNumInList){
         passengerlist.add(new passenger(email,pass,phone,balance,bankNumInList));
         login(email,pass);
+        currentUser.addTrip(new trip("17/04/2017"));
     }
 
     public static boolean checkEmailInList(String email){

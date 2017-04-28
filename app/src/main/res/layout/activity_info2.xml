@@ -32,7 +32,7 @@
             app:hintTextAppearance="@style/MyHintText">
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/namebank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/id"

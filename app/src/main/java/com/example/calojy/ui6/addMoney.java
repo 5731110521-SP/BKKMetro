@@ -89,20 +89,40 @@ public class addMoney extends AppCompatActivity {
     }//end onCreate
 
     private void DialogBox(String mes){
-        AlertDialog alertDialog=new AlertDialog.Builder(this).create();
+        /*AlertDialog alertDialog=new AlertDialog.Builder(this).create();
         alertDialog.setTitle("");
         alertDialog.setMessage(mes);
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 passengerList.currentUser.setBalance(money+passengerList.currentUser.getBalance());
-                passengerList.currentUser.addTopup(new topup(money,bankAccount.name_list.get(sp1.getSelectedItemPosition())
+                passengerList.currentUser.addTopup(new topup(money
+                        ,bankAccount.bank_list.get(sp1.getSelectedItemPosition())
                         ,bankAccount.acc_list.get(sp1.getSelectedItemPosition())));
                 //passengerList.passengerlist.get(passengerList.current).setBalance(money+passengerList.currentUser.getBalance());
                 Intent dash = new Intent(addMoney.this, splip.class);
                 startActivity(dash);
             }
         });
-        alertDialog.show();
+        alertDialog.show();*/
+        AlertDialog.Builder builder = new AlertDialog.Builder(addMoney.this);
+        builder.setMessage(mes);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which){
+                passengerList.currentUser.setBalance(money+passengerList.currentUser.getBalance());
+                passengerList.currentUser.addTopup(new topup(money
+                        ,bankAccount.bank_list.get(sp1.getSelectedItemPosition())
+                        ,bankAccount.acc_list.get(sp1.getSelectedItemPosition())));
+                //passengerList.passengerlist.get(passengerList.current).setBalance(money+passengerList.currentUser.getBalance());
+                Intent dash = new Intent(addMoney.this, splip.class);
+                startActivity(dash);
+            }
+        });
+        builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which){
+
+            }
+        });
+        builder.show();
     }
 }

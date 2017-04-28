@@ -23,13 +23,18 @@ public class forgot extends AppCompatActivity {
                 formEmailFor=(EditText) findViewById(R.id.mailfor);
                 String email = formEmailFor.getText().toString();
                 if(email.length()<=0){
-                    DialogBox("กรุณากรอกอีเมล");
+                    formEmailFor.setError("กรุณากรอกอีเมล");
+                    //DialogBox("กรุณากรอกอีเมล");
                 }else if(email.indexOf("@")==-1) {
-                    DialogBox("กรุณากรอกข้อมูลให้ถูกต้อง");
+                    formEmailFor.setError("กรุณากรอกข้อมูลให้ถูกต้อง");
+                    //DialogBox("กรุณากรอกข้อมูลให้ถูกต้อง");
                 }else if (!passengerList.checkEmailInList(email)){
-                        DialogBox("ไม่มีอีเมลนี้ในระบบ");
+                    formEmailFor.setError("ไม่มีอีเมลนี้ในระบบ");
+                    //DialogBox("ไม่มีอีเมลนี้ในระบบ");
                 }else {
-                        DialogBoxNext("ส่งไปยังอีเมลเรียบร้อย");
+                    Intent log = new Intent(forgot.this,login.class);
+                    startActivity(log);
+                    //DialogBoxNext("ส่งไปยังอีเมลเรียบร้อย");
                 }
 
             }
@@ -63,8 +68,8 @@ public class forgot extends AppCompatActivity {
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent log = new Intent(forgot.this,login.class);
-                startActivity(log);
+                //Intent log = new Intent(forgot.this,login.class);
+                //startActivity(log);
             }
         });
         alertDialog.show();

@@ -121,6 +121,10 @@ public class CustomAdapterSummary extends ArrayAdapter<String> {
                 extratxt.setTextColor(Color.parseColor("#FF809293"));
                 extratxt.setText(" สถานีต้นทาง: สามย่าน                          7:30" +
                         "\n สถานีปลายทาง: บางซื่อ                        7:55\n");
+        }else if(itemname.get(position).contains("ซื้อตั๋วแบบจำกัดวัน")){
+            txtTitle.setText(itemname.get(position));
+            imageView.setImageResource(imgid.get(position));
+            txtTitle.setTextColor(Color.parseColor("#FFFE545D"));
         }
 
         return rowView;

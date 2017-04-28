@@ -1,8 +1,10 @@
 package com.example.calojy.ui6;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class passenger {
@@ -10,6 +12,8 @@ public class passenger {
     private String phone;
     private String pass;
     private int balance;
+    private int day;
+    private  String dayex;
     private ArrayList<topup> topups;
     private ArrayList<trip> trips;
     public static List<Integer> bankNumInList = new ArrayList<Integer>(Arrays.<Integer>asList(0));
@@ -20,6 +24,7 @@ public class passenger {
         this.phone=phone;
         this.pass=pass;
         this.balance=balance;
+        day=0;
         this.bankNumInList.add(bankNumInList);
         this.bankAccounts=bankAccounts;
         topups = new ArrayList<>();
@@ -72,4 +77,21 @@ public class passenger {
     public ArrayList<trip> getTrips() {
         return trips;
     }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        date.setTime(date.getTime()+day*24*60*60*1000);
+        this.dayex = currentDate.format(date);
+    }
+
+    public String getDayex() {
+        return dayex;
+    }
+
 }

@@ -324,12 +324,14 @@ public class info0 extends AppCompatActivity {
 
                 if(passengerList.checkEmailInList(mail)){
                     formMail.setText("");
-                    DialogBox("อีเมลถูกใช้ไปแล้ว");
+                    formMail.setError("อีเมลถูกใช้ไปแล้ว");
+                    //DialogBox("อีเมลถูกใช้ไปแล้ว");
                     return false;
                 }
                 if(passengerList.checkPhoneInList(phone)){
                     formPhone.setText("");
-                    DialogBox("เบอร์โทรศัพท์ถูกใช้ไปแล้ว");
+                    formPhone.setError("เบอร์โทรศัพท์ถูกใช้ไปแล้ว");
+                    //DialogBox("เบอร์โทรศัพท์ถูกใช้ไปแล้ว");
                     return false;
                 }
                 return true;

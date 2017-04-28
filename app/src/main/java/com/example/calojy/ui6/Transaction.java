@@ -263,8 +263,17 @@ public class Transaction extends Activity {
                     trbDate=trDate;
                 }
 
-                itemm.add(item[1] + item2[1] + item3[1]);
-                itemm3.add(item[1] + item2[1] + item3[1]);
+                if(trips.get(itr).getFare()==0){
+                    itemm.add(item[1] + item2[1] + "- บาท");
+                    itemm3.add(item[1] + item2[1] + "- บาท");
+                }else if(trips.get(itr).getFare()>42){
+                    itemm.add("ซื้อตั๋วแบบจำกัดวัน                 " + trips.get(itr).getFare()+" บาท");
+                    itemm3.add("ซื้อตั๋วแบบจำกัดวัน                 " + trips.get(itr).getFare()+" บาท");
+                }else{
+                    itemm.add(item[1] + item2[1] + item3[1]);
+                    itemm3.add(item[1] + item2[1] + item3[1]);
+                }
+
                 imgidd.add(R.drawable.paymoney);
                 imgidd3.add(R.drawable.paymoney);
 

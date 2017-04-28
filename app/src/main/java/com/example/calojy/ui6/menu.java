@@ -12,6 +12,15 @@ public class menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        findViewById(R.id.homebutton).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent log = new Intent(menu.this,dash.class);
+                startActivity(log);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_left);
+                }
+        });
+
         findViewById(R.id.toAcc).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -22,7 +31,7 @@ public class menu extends AppCompatActivity {
         findViewById(R.id.toAdd).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent add = new Intent(menu.this,addMoney.class);
+                Intent add = new Intent(menu.this,chooseAdd.class);
                 startActivity(add);
             }
         });
