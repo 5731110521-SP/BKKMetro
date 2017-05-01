@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.List;
 
 public class passenger {
+    private String name;
+    private String id;
     private String email;
     private String phone;
     private String pass;
@@ -19,7 +21,9 @@ public class passenger {
     public static List<Integer> bankNumInList = new ArrayList<Integer>(Arrays.<Integer>asList(0));
     private ArrayList<bankAccount> bankAccounts = new ArrayList<>();
 
-    public passenger(String email,String pass,String phone,int balance,int bankNumInList){
+    public passenger(String email,String pass,String phone,int balance,int bankNumInList,String name,String id){
+        this.name=name;
+        this.id=id;
         this.email=email;
         this.phone=phone;
         this.pass=pass;
@@ -52,6 +56,15 @@ public class passenger {
     public String getPass() {
         return pass;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
 
     public ArrayList<bankAccount> getBankAccounts() {
         return bankAccounts;

@@ -268,7 +268,7 @@ public class info0 extends AppCompatActivity {
             public void onClick(View v){
                 if (mybtnContClicked(v)) {
                     bankAccount.nameB = name;
-                    Intent info2Intent = new Intent(info0.this, info2.class);
+                    Intent info2Intent = new Intent(info0.this, confirmProfile.class);
                     startActivity(info2Intent);
                 }
             }

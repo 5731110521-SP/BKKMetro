@@ -19,7 +19,7 @@ class passengerList {
             //addInList("a","a","012-345-6789",100,bankAccounts);
             //String bankID,String bankName,String name,int num
             //bankAccount.addBankaccount("123-4-56789-0","dd",3);
-            addInList("a@.com","a","012-345-6789",290,bankAccount.pos);
+            addInList("a@.com","a","012-345-6789",290,bankAccount.pos,"Alice Cat","1102700642934");
 
             passengerlist.get(0).addTopup(new topup(300,bankAccount.bank_list.get(0),bankAccount.acc_list.get(0),"11/04/2017"));
             passengerlist.get(0).addTopup(new topup(100,bankAccount.bank_list.get(0),bankAccount.acc_list.get(0),"12/04/2017"));
@@ -38,8 +38,8 @@ class passengerList {
         }
     }
 
-    public static void addInList(String email,String pass,String phone,int balance,int bankNumInList){
-        passengerlist.add(new passenger(email,pass,phone,balance,bankNumInList));
+    public static void addInList(String email,String pass,String phone,int balance,int bankNumInList,String name,String id){
+        passengerlist.add(new passenger(email,pass,phone,balance,bankNumInList,name,id));
         login(email,pass);
         currentUser.addTrip(new trip("17/04/2017"));
     }
