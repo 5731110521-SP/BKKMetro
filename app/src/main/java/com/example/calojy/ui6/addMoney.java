@@ -54,7 +54,6 @@ public class addMoney extends AppCompatActivity {
             else imageID=R.drawable.iconbank6;
             list.add(new ItemData(bankAccounts.get(i).getBankID(),imageID));
 */
-
             list.add(new ItemData(bankAccount.acc_list.get(i),bankAccount.resId_list.get(i)));
 
         }
@@ -113,6 +112,7 @@ public class addMoney extends AppCompatActivity {
                 passengerList.currentUser.addTopup(new topup(money
                         ,bankAccount.bank_list.get(sp1.getSelectedItemPosition())
                         ,bankAccount.acc_list.get(sp1.getSelectedItemPosition())));
+                //passengerList.currentbanktoadd = sp1.getSelectedItemPosition();
                 //passengerList.passengerlist.get(passengerList.current).setBalance(money+passengerList.currentUser.getBalance());
                 Intent dash = new Intent(addMoney.this, splip.class);
                 startActivity(dash);

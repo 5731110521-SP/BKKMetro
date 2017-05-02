@@ -31,7 +31,8 @@
         <activity android:name=".menu" />
         <activity android:name=".changePass" />
         <activity android:name=".chooseAdd" />
-        <activity android:name=".addDay"></activity>
+        <activity android:name=".addDay" />
+        <activity android:name=".loginbank" />
     </application>
 
 </manifest>

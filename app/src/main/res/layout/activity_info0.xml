@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/passHint"
-                    android:inputType="textPassword"
+                    android:inputType="numberPassword"
                     android:nextFocusForward="@+id/pass2"
                     android:nextFocusDown="@+id/pass2"
                     android:nextFocusRight="@+id/pass2"
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/comfirmPassHint"
-                    android:inputType="textPassword"
+                    android:inputType="numberPassword"
                     android:textColorHint="@color/colorGray"
                     android:theme="@style/MyEditText" />
             </android.support.design.widget.TextInputLayout>
