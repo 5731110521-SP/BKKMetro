@@ -33,6 +33,8 @@
         <activity android:name=".chooseAdd" />
         <activity android:name=".addDay" />
         <activity android:name=".loginbank" />
+        <activity android:name=".confirmProfile" />
+        <activity android:name=".viewProfile"></activity>
     </application>
 
 </manifest>
