@@ -13,7 +13,7 @@ public class Transaction extends Activity {
     ListView list,list2,list3;
 
     private String[] item = {"เติมเงิน","ชำระค่าโดยสาร"};
-    private String[] item2 = {"                                    ","                    "};
+    private String[] item2 = {"                             ","                    "};
     private String[] item3 = {"+100 บาท","-42 บาท"};
 
     public String[] it = {"18/04/2017","เติมเงิน                               +500 บาท"};
@@ -267,8 +267,8 @@ public class Transaction extends Activity {
                     itemm.add(item[1] + item2[1] + "- บาท");
                     itemm3.add(item[1] + item2[1] + "- บาท");
                 }else if(trips.get(itr).getFare()>42){
-                    itemm.add("ซื้อตั๋วแบบจำกัดวัน                 " + trips.get(itr).getFare()+" บาท");
-                    itemm3.add("ซื้อตั๋วแบบจำกัดวัน                 " + trips.get(itr).getFare()+" บาท");
+                    itemm.add("ซื้อตั๋วแบบจำกัดวัน             " + trips.get(itr).getFare()+" บาท");
+                    itemm3.add("ซื้อตั๋วแบบจำกัดวัน             " + trips.get(itr).getFare()+" บาท");
                 }else{
                     itemm.add(item[1] + item2[1] + item3[1]);
                     itemm3.add(item[1] + item2[1] + item3[1]);

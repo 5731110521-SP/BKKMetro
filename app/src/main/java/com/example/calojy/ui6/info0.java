@@ -389,7 +389,10 @@ public class info0 extends AppCompatActivity {
                 if(s.equalsIgnoreCase("")){
                     formPass1.setError("กรุณากรอกรหัสผ่าน");
                     return true;
-                }else {
+                }else if(s.length()!=6){
+                    formPass1.setError("กรุณากรอกรหัสผ่านเ 6 ตัว");
+                    return true;
+                }else{
                     formName.setError(null);
                 }
                 return false;

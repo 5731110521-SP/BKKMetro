@@ -32,8 +32,12 @@
         <activity android:name=".changePass" />
         <activity android:name=".chooseAdd" />
         <activity android:name=".addDay" />
+<<<<<<< HEAD
         <activity android:name=".confirmProfile" />
         <activity android:name=".viewProfile"></activity>
+=======
+        <activity android:name=".loginbank" />
+>>>>>>> refs/remotes/origin/KMbranch2
     </application>
 
 </manifest>

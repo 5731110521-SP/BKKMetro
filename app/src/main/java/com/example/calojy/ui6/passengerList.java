@@ -11,6 +11,7 @@ class passengerList {
 
     public static passenger currentUser;
     public static int current;
+    public static int currentbanktoadd;
 
     public static void initList() {
         if(passengerlist.isEmpty()){

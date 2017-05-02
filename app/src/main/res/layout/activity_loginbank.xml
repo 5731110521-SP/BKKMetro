@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backloginbank"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.example.calojy.ui6.loginbank">
+
+    <ImageView
+        android:id="@+id/imageViewbank0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        app:srcCompat="@drawable/loginbank0" />
+
+    <ImageView
+        android:id="@+id/imageViewbank2"
+        android:layout_width="344dp"
+        android:layout_height="551dp"
+        android:alpha="0"
+        app:srcCompat="@drawable/loginbank2"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <ImageView
+        android:id="@+id/imageViewbank4"
+        android:layout_width="344dp"
+        android:layout_height="551dp"
+        android:alpha="0"
+        app:srcCompat="@drawable/loginbank4"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <ImageView
+        android:id="@+id/imageViewbank5"
+        android:layout_width="344dp"
+        android:layout_height="551dp"
+        android:alpha="1"
+        app:srcCompat="@drawable/loginbank5"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+</android.support.constraint.ConstraintLayout>
