@@ -13,91 +13,63 @@
         android:background="@drawable/showprofile"
         android:orientation="vertical">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayout3"
+        <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/id"
+            android:layout_alignLeft="@+id/phone"
+            android:layout_alignStart="@+id/phone"
+
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:layout_marginTop="250dp"
+            android:ems="10"
+            android:text=""
+            android:visibility="visible" />
 
-            app:hintTextAppearance="@style/MyHintText">
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_above="@+id/id"
-                android:layout_alignLeft="@+id/phone"
-                android:layout_alignStart="@+id/phone"
-
-                android:ems="10"
-                android:text=""
-                android:visibility="visible" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textView"
+        <TextView
+            android:id="@+id/id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:textColorHint="@color/colorBlack"
-            app:hintTextAppearance="@style/MyHintText">
+            android:layout_height="40dp"
+            android:layout_above="@+id/cancel"
+            android:layout_alignLeft="@+id/cancel"
+            android:layout_alignStart="@+id/cancel"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:maxLength="17" />
 
-            <TextView
-                android:id="@+id/id"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_above="@+id/cancel"
-                android:layout_alignLeft="@+id/cancel"
-                android:layout_alignStart="@+id/cancel"
-                android:ems="10"
-                android:maxLength="17" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayout2"
+        <TextView
+            android:id="@+id/mail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:textColorHint="@color/colorGray"
-            app:hintTextAppearance="@style/MyHintText">
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/phone"
+            android:layout_alignStart="@+id/phone"
+            android:layout_below="@+id/phone"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:nextFocusDown="@+id/pass1" />
 
-            <TextView
-                android:id="@+id/mail"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignLeft="@+id/phone"
-                android:layout_alignStart="@+id/phone"
-                android:layout_below="@+id/phone"
-                android:ems="10"
-                android:nextFocusDown="@+id/pass1" />
-        </android.support.design.widget.TextInputLayout>
-
-
-        <android.support.design.widget.TextInputLayout
+        <TextView
+            android:id="@+id/phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:textColorHint="@color/colorBlack"
-            app:hintTextAppearance="@style/MyHintText">
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:maxLength="12"
+            android:nextFocusDown="@+id/next"
+            android:nextFocusForward="@+id/next"
+            android:nextFocusRight="@+id/next" />
 
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:ems="10"
-                android:maxLength="12"
-                android:nextFocusDown="@+id/next"
-                android:nextFocusForward="@+id/next"
-                android:nextFocusRight="@+id/next" />
-
-        </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,16 +82,14 @@
                 android:id="@+id/cancel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_weight="1.00"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
                 android:text="บัญชีธนาคาร" />
 
             <Button
                 android:id="@+id/next"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="เปลี่ยนรหัสผ่าน" />
 
         </LinearLayout>

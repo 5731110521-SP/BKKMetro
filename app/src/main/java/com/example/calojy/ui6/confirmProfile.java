@@ -217,7 +217,7 @@ public class confirmProfile extends AppCompatActivity {
             public void onClick(View v){
 
 
-                    Intent info2Intent = new Intent(confirmProfile.this, info2.class);
+                    Intent info2Intent = new Intent(confirmProfile.this, dash.class);
                     startActivity(info2Intent);
 
             }
@@ -225,7 +225,7 @@ public class confirmProfile extends AppCompatActivity {
 
         findViewById(R.id.back0).setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent loginIntent = new Intent(confirmProfile.this, info0.class);
+                Intent loginIntent = new Intent(confirmProfile.this, info2.class);
                 startActivity(loginIntent);
             }
         });

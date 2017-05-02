@@ -18,7 +18,7 @@ public class info2 extends AppCompatActivity {
     Spinner sp;
     String acc;
     String bank;
-    info0 n=new info0();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -224,7 +224,7 @@ public class info2 extends AppCompatActivity {
         alertDialog.setButton("ตกลง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent dashIntent = new Intent(info2.this, dash.class);
+                Intent dashIntent = new Intent(info2.this, confirmProfile.class);
                 startActivity(dashIntent);
                 /*ArrayList<bankAccount> bankAccounts = new ArrayList<>();
                 bankAccounts.add(new bankAccount(formAcc.getText().toString(),bank));
